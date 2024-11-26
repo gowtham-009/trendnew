@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main page</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/colors.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <style>
+   
+  </style>
+</head>
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="navbar1">
+      <div class="container-fluid">
+       <div>
+        <a class="navbar-brand" href="#">
+          <img src="css/images/logo.webp" alt="logo" width="40" height="40">
+        </a>
+        <a class="navbar-brand text-white " id="markets" href="#">Markets</a>
+        <a class="navbar-brand text-white" href="#">STARFOLIO</a>
+       </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Alerts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">F&O</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">MF</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Reports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Screeners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" aria-current="page" href="#">Subscribe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Superstars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Watchlist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Insider Trades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" aria-current="page" href="#">Results</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Data Downloader</a></li>
+                <li><a class="dropdown-item" href="#">Events Calendar</a></li>
+                <li><a class="dropdown-item" href="#">What's New</a></li>
+                <li><a class="dropdown-item" href="#">Explore</a></li>
+                <li><a class="dropdown-item" href="#">FAQs</a></li>
+                <li><a class="dropdown-item" href="#">Widgets</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex gap-2">
+            <input class="form-control" type="search" placeholder="Search Stock, Inde " aria-label="Search" style="width:150px;">
+            <div class="dropdown">
+           
+              <button class="btn btn-bg" type="button" id="flagDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="flag-icon flag-icon-in"></span>
+              </button>
+              
+             
+              <ul class="dropdown-menu" aria-labelledby="flagDropdown">
+                <li>
+                  <a class="dropdown-item" href="#" data-flag="us" data-name="USA">
+                    <span class="flag-icon flag-icon-us me-2"></span> USA
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" data-flag="in" data-name="India">
+                    <span class="flag-icon flag-icon-in me-2"></span> India
+                  </a>
+                </li>
+              </ul>
+            </div>
+        
+            <button class="btn btn-primary text-white" type="submit">Login/Sign up</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="w-100 p-1 " id="market-pannel" >
+       <div class="container-fluid d-flex gap-2 p-2" >
+          <div class="w-100 p-1" >
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/exchange-rate.png" alt="" width="40" height="40"> Market Today</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">1 Major Resignation Today <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">29 Meeting Anoncement Today <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/discover.png" alt="" width="40" height="40"> Discover</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Top Grainers <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Top Losers <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary text-decoration-none"><img src="css/images/menu (1).png" alt="" width="40" height="40"> Indices & Sector Dashboard</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Indices<i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Sector <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Industry <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">ETF <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Global Indices <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/menu.png" alt="" width="40" height="40"> IPO Dashboard</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Recently Listed<i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Most Successfull <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Upcoming <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+ 
+            </div>
+
+          </div>
+          <div class="w-100 p-1" >
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/seo.png" alt="" width="40" height="40"> Analyst Estimates</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Mouth Bullish <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Upsides <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/report.png" alt="" width="40" height="40"> Result Dashboard</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Rapid Result <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">4,311 Q2 FY25 Results declared  <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Nifty 50 companies average YoY revenue changed by 6.62%   <i class="fa-solid fa-arrow-right"></i></a></li>
+
+            </div>
+            <hr> 
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/discover.png" alt="" width="40" height="40"> CEO Salary Dashboard</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Paid CEOs in Pharma <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Paid CEOs in IT <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary text-decoration-none"><img src="css/images/handshake.png" alt="" width="40" height="40"> Deals</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Insider/SAST Trades <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> Bulk/Block Deals  <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            
+           
+          </div>
+          <div class="w-100 p-1" >
+            <div class="w-100 links list-unstyled">
+             
+              <li><a href="" class="text-primary text-decoration-none"><img src="css/images/settings.png" alt="" width="40" height="40"> Tools</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> Compare Stocks <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">  Buy Sell Zone <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> Best Performers <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">  Data Downloader <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Stock Market Widgets <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> Conference/Earnings Calls <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> AI Summary <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> Investor Presentations <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Events Calendar <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+
+            </div>
+            <hr>
+          </div>
+          <div class="w-100 p-1" >
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/settings.png" alt="" width="40" height="40"> Market News</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Mouth Bullish <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Upsides <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/exchange-rate.png" alt="" width="40" height="40">ASM % GSM Stocks</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Rapid Result <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">4,311 Q2 FY25 Results declared  <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Nifty 50 companies average YoY revenue changed by 6.62%   <i class="fa-solid fa-arrow-right"></i></a></li>
+
+            </div>
+            <hr> 
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/exchange-rate.png" alt="" width="40" height="40"> FLL DLL Daily Activity</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Paid CEOs in Pharma <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Paid CEOs in IT <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary text-decoration-none"><img src="css/images/exchange-rate.png" alt="" width="40" height="40"> New Investor Presentation</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Insider/SAST Trades <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none"> Bulk/Block Deals  <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+          </div>
+          <div class="w-100 p-1" >
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/seo.png" alt="" width="40" height="40"> News</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Mouth Bullish <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Highest Upsides <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+            </div>
+            <hr>
+            <div class="w-100 links list-unstyled">
+              <li><a href="" class="text-primary  text-decoration-none"><img src="css/images/report.png" alt="" width="40" height="40"> Us Markets</a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Rapid Result <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">4,311 Q2 FY25 Results declared  <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+              <li style="padding-left: 13%;"><a href=""  class="text-dark  text-decoration-none">Nifty 50 companies average YoY revenue changed by 6.62%   <i class="fa-solid fa-arrow-right text-b"></i></a></li>
+
+            </div>
+           
+          </div>
+       </div>
+    </div>
+    <nav class="w-100 p-2 bg-dark" id="navbar2" >
+      <div class="d-flex">
+        <div class="p-2">
+          <a href="#" class="fs-4 text-white" id="menu">
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+          </a>
+        </div>
+        <div class="w-100 d-flex justify-content-end" >
+          <form class="d-flex gap-2">
+            <input class="form-control" type="search" placeholder="Search Stock, Index" aria-label="Search" style="width:150px;">
+           
+            <button class="btn btn-primary text-white" type="submit">Login/Sign up</button>
+          </form>
+        </div>
+      </div>
+      <div class="w-100 bg-dark" id="menu-link" style=" display: none;">
+         <ul class="w-100 p-0 ul-links">
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/freemium.png" alt="">Subscription Plans</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/pie-chart.png" alt="">Markets</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/letter-o.png" alt="">Starfolio</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/active.png" alt="">Alerts</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/right-arrow.png" alt="">Futures and Options</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/money.png" alt="">Mutual Funds</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/report.png" alt="">Research Reports</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/dashboard.png" alt="">Screeners</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/superstar.png" alt="">Superstars</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/professional-portfolio.png" alt="">Portolio</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/files.png" alt="">Watchlist</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li><a href="" class="text-white"><img class="p-2" width="40" height="40" src="css/images/dashboard (1).png" alt="">Results Dashboard</a><i class="fa-solid fa-arrow-right text-b"></i></li><hr>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <img class="p-1" width="40" height="40" src="css/images/more.png" alt=""> More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Data Downloader</a></li>
+                <li><a class="dropdown-item" href="#">Events Calendar</a></li>
+                <li><a class="dropdown-item" href="#">What's New</a></li>
+                <li><a class="dropdown-item" href="#">Explore</a></li>
+                <li><a class="dropdown-item" href="#">FAQs</a></li>
+                <li><a class="dropdown-item" href="#">Widgets</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <div class="dropdown">
+                <button class="btn btn-bg" type="button" id="flagDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="flag-icon flag-icon-in"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="flagDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#" data-flag="us" data-name="USA">
+                      <span class="flag-icon flag-icon-us me-2"></span> USA
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-flag="in" data-name="India">
+                      <span class="flag-icon flag-icon-in me-2"></span> India
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+         </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="w-100" >
+      <div id="loading_c" class="spinner-border text-b" role="status" style="display: none;">
+        <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="alert alert-danger" id="error_c" role="alert" style="display: none;">
+            <p id="error_message_c"></p>
+        </div>
+    <div class="container-fluid main-container p-2"  >
+        <div class="banner  rounded-5 " >
+            <div class="d-flex wrap">
+              <div class="w100"  style=" width: 60%;">
+                <div class="w-100 p-2" >
+                 <p><span id="companyname" style="font-size: 2rem;"></span> <br>
+                   <span class="text-secondary fs">NSE:</span><span class="text-secondary fs" id="nse"></span> <span lass="text-secondary fs" >|</span> <span class="text-secondary fs">BSE:</span><span class="text-secondary fs" id="bse"></span></p>
+               </div>
+                 <div class="w-100 p-1">
+                 <p><span class="text-info"><i class="fa-solid fa-square p-1"></i><i class="fa-solid fa-square p-1"></i><i class="fa-solid fa-square p-1"></i></span> <span class="text-success"><b>Value Stock,</b></span><span class="text-success"><b>Under Radar</b></span></p>
+               </div>
+               <div class="w-100 p-1 d-flex" >
+                   <div class="w-50 p-1" >
+                       <p style="color: rgb(91, 194, 91);"><span id="price" class="text-dark" style="font-size: 2.3rem;"><b></b></span> <b><span id="totalprice"></span></b><b>(<span id="today_percentage"></span>%)</b><br>
+                          <span class="text-danger"><i class="fa-solid fa-down-long"></i></span><b> <span id="all_percentage" class="text-danger"></span></b><span  class="text-danger">% Fall from 52W High</span>
+                       </p>
+                   </div>
+                   <div class=" p-1" >
+                       <div class="line"></div>
+                   </div>
+                   <div class="w-100 p-1" >
+                       <p style="margin-left: 5%;"><span id="volume" style="font-size: 2.3rem;"></span><span  style="font-size: 2.3rem;">M</span>  <span style="color: gray;">NSE+BSE Volume</span><br>
+                        <span  style="color: gray;">NSE:</span>  <span  style="color: gray;" id="currenttime"></span>
+                       </p>
+                   </div>
+               </div>
+                 </div>
+                 <div class="d-flex flex-column gap-5 align-items-center justify-content-end w100" style=" width: 40%;" >
+                   <div class="w-100 p-1 none" >
+                      <div class=" d-flex justify-content-center  p-2 rounded " style="border: 1px solid blue;" >
+                         <span>Download Real Time <B class="fs-4">STOCK REPORT</B></span><span class="fs-5 mb-2"></span></H5>
+                      </div>
+                   </div>
+                   <div class="w-100 d-flex justify-content-end justify-content-evenly p-1">
+                     <div class="d-flex flex-column justify-content-center align-items-center"><img class="p-2" width="40" height="40" src="css/images/files.png" alt=""><span>Watch List</span></div>
+                     <div class="d-flex flex-column justify-content-center align-items-center"><img class="p-2" width="40" height="40" src="css/images/professional-portfolio.png" alt=""><span>Portfolio</span></div>
+                     <div class="d-flex flex-column justify-content-center align-items-center"><img class="p-2" width="40" height="40" src="css/images/active.png" alt=""><span>Alerts</span></div>
+                     <div class="d-flex flex-column justify-content-center align-items-center"><img class="p-2" width="40" height="40" src="css/images/connectifity.png" alt=""><span>Share</span></div>
+                     <div class="d-flex flex-column justify-content-center align-items-center"><img class="p-2" width="40" height="40" src="css/images/report.png" alt=""><span>My Notes</span></div>
+                   </div>
+                 </div>
+            </div>
+
+            <div class="w-100 d-flex wrap p-1 bg-light-gray">
+              <div class="w-100 p-1 none1" data-bs-toggle="modal" data-bs-target="#scrollableModal" style="cursor: pointer;">
+                <div class="w-100" >
+                  <div class="w-100 d-flex flex-wrap">
+                    <div class="w-50 p-1" style="border: 1px solid gray; border-left: none; border-top: none; height:100px;">
+                      <div class="d-flex p-0 justify-content-end align-items-end" style="height: 93px;">
+                        <p class="text-success fs-4" style="margin-bottom: 48%; margin-right: 19%;"><b>16</b></p>
+                        <span class="bg-success fs-4 p-3 text-white d-flex justify-content-center align-items-center" style="width: 35px; margin-right: -5%; margin-bottom: -3%; height: 35px;">P</span>
+                      </div>
+                    </div>
+                    <div class="w-50 p-1" style="border: 1px solid gray; border-right: none; border-top: none; height:100px;">
+                      <div class="d-flex align-items-end" style="height: 93px;">
+                        <p class="text-warning fs-4" style="margin-bottom: 47%; margin-left: 30%;"><b>27</b></p>
+                        <span class="bg-warning fs-4 p-3 text-white d-flex justify-content-center align-items-center" style="width: 35px; margin-left: -64%; margin-bottom: -3%; height: 35px;">A</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-100 d-flex flex-wrap">
+                    <div class="w-50 p-1" style="border: 1px solid gray; border-left: none; border-bottom: none; height:100px;">
+                      <div class="d-flex p-0 justify-content-end" style="height: 93px;">
+                        <p class="text-danger fs-4" style="margin-top: 24%; margin-right: 17%;"><b>11</b></p>
+                        <span class="bg-danger fs-4 p-3 text-white d-flex justify-content-center align-items-center" style="width: 35px; margin-top: -4%; margin-right: -5%; height: 35px;">Q</span>
+                      </div>
+                    </div>
+                    <div class="w-50 p-1" style="border: 1px solid gray; border-right: none; border-bottom: none; height:100px;">
+                      <div class="d-flex p-0" style="height: 93px;">
+                        <p class="text-primary fs-4" style="margin-top: 26%; margin-left: 36%;"><b>30</b></p>
+                        <span class="bg-primary fs-4 p-3 text-white d-flex justify-content-center align-items-center" style="width: 35px; height: 35px; margin-left: -70%; margin-top: -5%;">C</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-100 p-3" style=" padding-top: 3rem !important;">
+                <span class="fs-4" id="promoter"></span><br>
+                <span>Promoter holding %</span>
+                <span class="text-danger">Promoter holding  decreased by</span>
+                <span class="text-danger">3.7800%.</span>
+               
+              </div>
+              <div class="w-100 p-3" style="  padding-top: 3rem !important;">
+                <span class="fs-4" id="pledges"></span><br>
+                <span>Promoter Pledges %</span><br>
+                <span class="text-warning">No changes Promotes Pledges</span>
+                
+              </div>
+              <div class="w-100 p-1" style=" padding-top: 3rem !important;">
+                <span class="fs-4" id="fll"></span><br>
+                <span>FLL holding current Qtr %</span><br>
+                <span class="text-success">Fll holding rise by 2.36%</span>
+              </div>
+              <div class="w-100 p-1" style=" padding-top: 3rem !important;">
+                <span class="fs-4" id="mf"></span><br>
+                <span>MF holding current Qtr %</span><br>
+                <span class="text-success">MF holding rise by 0.75%</span>
+              </div>
+              <div class="w-100 p-1" style=" padding-top: 3rem !important;">
+                <span class="fs-4" id="inshold"></span><br>
+                <span>Institutions holding %</span><br>
+                <span class="text-success">Institutions holding increased by 2.7100%.</span>
+              </div>
+            </div>
+
+           <div class="w-100 p-1 bn" >
+            <ul class="d-flex banner-link justify-content-between"  >
+              <li class="nav-item">
+                <a class="nav-link " href="#">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">FORECASTER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">STOCK REPORT</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Buy Sell Zone</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">F&0</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Financials</a>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  News
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">All</a></li>
+                  <li><a class="dropdown-item" href="#">News</a></li>
+                  <li><a class="dropdown-item" href="#">Earnings Calls</a></li>
+                  <li><a class="dropdown-item" href="#">Corporate Announcements</a></li>
+                  <li><a class="dropdown-item" href="#">Research Reports</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="#">Reports</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Technicals
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Technicals</a></li>
+                  <li><a class="dropdown-item" href="#">Share Price History</a></li>
+                  <li><a class="dropdown-item" href="#">Delivery</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Deals
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Bulk Block Deals</a></li>
+                  <li><a class="dropdown-item" href="#">Insider Trading & SAST</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Corporate Actions
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">All</a></li>
+                  <li><a class="dropdown-item" href="#">Dividend</a></li>
+                  <li><a class="dropdown-item" href="#">Bonus</a></li>
+                  <li><a class="dropdown-item" href="#">Split</a></li>
+                  <li><a class="dropdown-item" href="#">Rights</a></li>
+                  <li><a class="dropdown-item" href="#">Board Meetings</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Alerts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+           </div>
+        </div>
+    </div>
+    </section>
+    <section class="w-100 mt-3 p-1" >
+      <div class="container-fluid p-1 border">
+        <p class="fs-5"><b>Tata Motors Ltd. Latest Shareholding Pattern - Promoter, FII, DII, Mutual Fund holding</b><br>
+          <span class="text-secondary fs-6">Tata Motors Ltd. shareholding pattern - Promoter holding and pledges, FII, DII, Mutual Fund holding change for the latest quarter.</span>
+        </p>
+
+        <div class=" d-flex column">
+          <div class="c-1 p-1" >
+            <div class="w-100" >
+              <div class="w-100  d-flex wrap gap-2" >
+                <div class="w-100"  >
+                  <div id="container" class="border rounded shadow-sm" style="min-height: 350px;"></div>
+                </div>
+                <div class="w-100 "  >
+                  <div id="container-2" class="border rounded shadow-sm" style="min-height: 350px;"></div>
+                </div>
+              </div>
+              <div class="w-100 p0 p-1 d-flex wrap gap-2 " >
+                <div class="w-100 " >
+                  <div id="container-3" class="border p-4 p0 rounded shadow-sm" style="min-height: 350px;"></div>
+                </div>
+                <div class="w-100" >
+                  <div id="container-4" class="border  rounded shadow-sm" style="min-height: 350px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-2 p-1">
+            <div class="alert alert-danger mt-3" role="alert">
+              Promoters have decreased holdings from 46.36% to 42.58% in Sep 2024 qtr
+            </div>
+            <div class="alert alert-success" role="alert">
+              FII/FPI have increased holdings from 18.18% to 20.54% in Sep 2024 qtr.
+            </div>
+            <div class="alert alert-success" role="alert">
+              Number of FII/FPI investors increased from 1162 to 1270 in Sep 2024 qtr.
+            </div>
+            <div class="alert alert-success" role="alert">
+              Mutual Funds have increased holdings from 9.83% to 10.58% in Sep 2024 qtr.
+            </div>
+            <div class="alert alert-success" role="alert">
+              Number of MF schemes increased from 45 to 46 in Sep 2024 qtr.
+            </div>
+            <div class="alert alert-success" role="alert">
+              Institutional Investors have increased holdings from 34.25% to 36.96% in Sep 2024 qtr.
+            </div>
+            <div class="w-100 d-flex justify-content-center">
+              <a href="" class="fs-6"><b>View all Shareholding Stock and Screeners <i class="fa-solid fa-arrow-right"></i></b></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="mt-3 w-100 p-1">
+    
+      <div class="container-fluid p-0">
+        <!-- Loading and Error Alerts -->
+        <div class="container-fluid mt-5">
+          <div id="loading" class="spinner-border text-b" role="status" style="display: none;">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="alert alert-danger" id="error" role="alert" style="display: none;">
+            <p id="error_message"></p>
+          </div>
+          
+          <!-- Tab Navigation -->
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab" aria-controls="summary" aria-selected="true">Summary Data</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="promoter-tab" data-bs-toggle="tab" data-bs-target="#promoter" type="button" role="tab" aria-controls="promoter" aria-selected="false">Promoter Holding</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="institutional-tab" data-bs-toggle="tab" data-bs-target="#institutional" type="button" role="tab" aria-controls="institutional" aria-selected="false">Institutional Holding</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="public-tab" data-bs-toggle="tab" data-bs-target="#public" type="button" role="tab" aria-controls="public" aria-selected="false">Public (Non-Institutional) Holding</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="mutual-tab" data-bs-toggle="tab" data-bs-target="#mutual" type="button" role="tab" aria-controls="mutual" aria-selected="false">Mutual Fund (Monthly Holding)</button>
+            </li>
+          </ul>
+          
+          <!-- Tab Content -->
+          <div class="tab-content" id="myTabContent">
+            <!-- Summary Tab -->
+            <div class="tab-pane fade show active" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+              <div class="table-responsive mt-3">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Summary</th>
+                      <th scope="col">Jan 2024</th>
+                      <th scope="col">Feb 2024</th>
+                      <th scope="col">Mar 2024</th>
+                      <th scope="col">Apr 2024</th>
+                      <th scope="col">May 2024</th>
+                      <th scope="col">Jun 2024</th>
+                      <th scope="col">Jul 2024</th>
+                      <th scope="col">Aug 2024</th>
+                      <th scope="col">Sep 2024</th>
+                      <th scope="col">Oct 2024</th>
+                      <th scope="col">Nov 2024</th>
+                      <th scope="col">Dec 2024</th>
+                    </tr>
+                  </thead>
+                  <tbody id="fetch_data">
+                    <!-- Dynamic Data -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+    
+            <!-- Other Tabs -->
+            <div class="tab-pane fade" id="promoter" role="tabpanel" aria-labelledby="promoter-tab">
+              <p class="mt-3">This is the Promoter Holding tab.</p>
+            </div>
+            <div class="tab-pane fade" id="institutional" role="tabpanel" aria-labelledby="institutional-tab">
+              <p class="mt-3">This is the Institutional Holding tab.</p>
+            </div>
+            <div class="tab-pane fade" id="public" role="tabpanel" aria-labelledby="public-tab">
+              <p class="mt-3">This is the Public (Non-Institutional) Holding tab.</p>
+            </div>
+            <div class="tab-pane fade" id="mutual" role="tabpanel" aria-labelledby="mutual-tab">
+              <p class="mt-3">This is the Mutual Fund (Monthly Holding) tab.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  <footer>
+    <div class="container-fluid bg-light-dark-blue d-flex justify-content-center align-items-center p-5 mt-3">
+      <div class=" p-3 bg-light-dark-voilet rounded-4" >
+        <div class="w-100 p-1 d-flex wrap gap-5" >
+          <div class="w-100 p-1" >
+            <figure class="d-flex gap-3 align-items-center cent">
+              <img src="css/images/logo.webp" alt="" width="70" height="70">
+              <p class="fs-1 text-white">Trendlyne</p>
+            </figure>
+            <p class="text-white fs-5 text-center">Stay ahead of the market</p>
+          </div>
+          <div class="w-100 p-3 fl" >
+            <li><a href="">Company</a</li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Terms Of Use</a></li>
+          </div>
+          <div class="w-100 p-3 fl" >
+         
+              <li><a href="">Disclaimer</a></li>
+              <li><a href="">Contact Us</a></li>
+          </div>
+          <div class="w-100 p-3 fl" >
+            <li><a href="">Resources</a</li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Stock Market Widgets</a></li>
+          </div>
+          <div class="w-100 p-3 fl" >
+            <li><a href="">FAQs</a</li>
+          </div>
+          
+        </div>
+        <hr>
+       
+        <div class="w-100 p-1 d-flex justify-content-between">
+           <div class="w-100 cp p-2">
+              <li><a href="" class="fs- text-white">Copyright © 2024 Giskard Datatech Pvt Ltd</a></li>
+           </div>
+           <div class="w-100 d-flex justify-content-end gap-3 cp p-2">
+            <li><a href="" class="fs-4"><i class="fa-brands fa-twitter text-white"></i></a></li>
+            <li><a href="" class="fs-4"><i class="fa-brands fa-linkedin text-white"></i></a></li>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- dialog box -->
+
+      <!-- Modal -->
+  <div class="modal fade" id="scrollableModal" tabindex="-1" aria-labelledby="scrollableModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="scrollableModalLabel">Scrollable Modal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Add content here -->
+          <div class="w-100 p-1 d-flex align-items-center" >
+            <img src="css/images/swot-logo-b.png" alt="" width="70" height="70">
+            <p class="text-dark fw-bold fs-4">Tata Motors Ltd. SWOT: Strengths, Weakness, Opportunity, and Threats</p>
+           </div>
+           <div class="w-100 d-flex justify-content-end p-1">
+            <a href="" class="text-primary">Add SWOT widget to your site/app <i class="fa-solid fa-arrow-right"></i></a>
+           </div>
+    
+           <div class="container">
+            <!-- Tab Navigation -->
+            <ul class="nav nav-tabs d-flex justify-content-between" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                      Strengths (16)
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        Weakness (6)
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+                        Opportunity (11)
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">
+                        Threats (7)
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="services-tab" data-bs-toggle="tab" data-bs-target="#services" type="button" role="tab" aria-controls="services" aria-selected="false">
+                        Others (12)
+                    </button>
+                </li>
+            </ul>
+        
+            <!-- Tab Content -->
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="background-color: rgb(193, 235, 193);">
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">MACD Crossover Above Signal Line</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Strong Performer, Under Radar Stocks (DVM)</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Consistent Highest Return Stocks over Five Years - Nifty500</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Rising Net Cash Flow and Cash from Operating activity</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Strong Annual EPS Growth</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Annual Profit Growth higher than Sector Profit Growth</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Effectively using its capital to generate profit - RoCE improving in last 2 years</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Effectively using Shareholders fund - Return on equity (ROE) improving since last 2 year</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Efficient in managing Assets to generate Profits - ROA improving since last 2 year</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Strong cash generating ability from core business - Improving Cash Flow from operation for last 2 years</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Annual Net Profits improving for last 2 years</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Book Value per share Improving for last 2 years</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">Company with Zero Promoter Pledge</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">FII / FPI or Institutions increasing their shareholding</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">MACD crossed above signal line previous end of day</a></li>
+                   <hr>
+                   <li class="p-3"><a class="mt-4 text-dark p-1" href="">MFs increased their shareholding last quarter</a></li>
+                </div>
+                <div class="tab-pane tp2 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" style="background-color: rgb(245, 224, 186);">
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Promoter holding decreased by more than -2% QoQ</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Declining Revenue every quarter for the past 2 quarters</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Declining profits every quarter for the past 2 quarters</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Fall in Quarterly Revenue and Net Profit (YoY)</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Weak Momentum: Price below Short, Medium and Long Term Averages</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Stocks Underperforming their Industry Price Change in the Quarter</a></li>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" style="background-color: rgb(167, 167, 244);">
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Buys by Superstar Investors</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Companies with current TTM PE Ratio less than 3 Year, 5 Year and 10 Year PE</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Broker price or reco upgrades in last month</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Undervalued Growth Stocks</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Broker Upgrades: Stocks where brokers upgraded recommendation or price target in the past one month</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">PEG lower than Industry PEG</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Highest FII stock holdings</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Stock with Low PE (PE < = 10)</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Top Gainers</a></li>
+                </div>
+                <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab" style="background-color: rgb(240, 161, 161);">
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Promoter decreasing their shareholding</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Recent Broker Downgrades in Reco or Target Price</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Companies with growing costs YoY for long term projects</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Red Flags: Firms linked to ongoing regulatory investigations/legal cases</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Increasing Trend in Non-Core Income</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">RSI indicating price weakness</a></li>
+                  <hr>
+                  <li class="p-3"><a class="mt-4 text-dark p-1" href="">Red Flag: Companies seeing significant coronavirus impact</a></li>
+                </div>
+                <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab" style="background-color: rgb(216, 216, 216);">
+                     <li class="p-3"><a class="mt-4 text-dark p-1" href="">High Piotroski Score - Companies with strong financials</a></li>
+                     <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Rising Delivery Percentage Compared to Prev Day</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Indian stocks that could be impacted by Brexit (Britain leaving the EU)</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Big Changes up or down in FII holding</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Significant Change in Promoter Shareholding - Latest Quarter</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Broker downgrades in price or recommendation in the past one month</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Affordable Stocks - Stocks with Good Trendlyne Valuation Score</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Average Bullish Trend - Stocks with Medium Trendlyne Momentum Score versus Benchmarks</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Decline in Net Profit with falling Profit Margin (QoQ)</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Degrowth in Revenue, Profits and Operating Profit Margin in recent results (QoQ)</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Companies with improving valuation scores after share price falls</a></li>
+                    <hr>
+                    <li class="p-3"><a class="mt-4 text-dark p-1" href="">Broker price or reco upgrades in last month</a></li>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </footer>
+<script src="javascript/nav.js"></script>
+<script src="javascript/table.js"></script>
+<script src="javascript/graph.js"></script>
+  <script>
+    const menu = document.getElementById('menu');
+const menuLink = document.getElementById('menu-link');
+const menuIcon = document.getElementById('menu-icon');
+
+// Ensure menu link starts as hidden
+menuLink.style.display = 'none';
+
+menu.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default action of the anchor tag
+
+  if (menuLink.style.display === 'none' || menuLink.style.display === '') {
+    menuLink.style.display = 'block';
+    menuIcon.classList.remove('fa-bars'); // Remove the bar icon
+    menuIcon.classList.add('fa-times'); // Add the close (times) icon
+  } else {
+    menuLink.style.display = 'none';
+    menuIcon.classList.remove('fa-times'); // Remove the close icon
+    menuIcon.classList.add('fa-bars'); // Add the bar icon
+  }
+});
+
+
+const loading_c = document.getElementById('loading_c');
+const error_c = document.getElementById('error_c');
+const date=new Date()
+document.getElementById('currenttime').innerHTML=date
+
+const get_data = async () => {
+    loading_c.style.display = 'block';
+    error_c.style.display = 'none';   
+  
+    
+    const url = 'jsondata/data.json';
+    try {
+        const response = await fetch(url, {
+            method: 'GET'
+        });
+
+        if (!response.ok) {
+            throw new Error("Request failed with status " + response.status);
+        }
+
+        const data = await response.json();
+        document.getElementById('companyname').innerHTML =data[0].banner.company_name
+        document.getElementById('bse').innerHTML =data[0].banner.bse
+        document.getElementById('nse').innerHTML =data[0].banner.nse
+        document.getElementById('price').innerHTML =data[0].banner.price
+        document.getElementById('totalprice').innerHTML =data[0].banner.today_price
+        document.getElementById('today_percentage').innerHTML =data[0].banner.today_percentage
+        document.getElementById('all_percentage').innerHTML =data[0].banner.all_time_percentage
+        document.getElementById('volume').innerHTML =data[0].banner.volume
+        document.getElementById('promoter').innerHTML =data[0].banner.promoter
+        document.getElementById('pledges').innerHTML =data[0].banner.pledges
+        document.getElementById('fll').innerHTML =data[0].banner.fll
+        document.getElementById('mf').innerHTML =data[0].banner.mf
+        document.getElementById('inshold').innerHTML =data[0].banner.ins_holding
+    } catch (err) {
+        error_c.style.display = "block";
+        document.getElementById('error_message_c').textContent = err.message;
+    } finally {
+        loading_c.style.display = 'none';
+    }
+};
+
+get_data();
+  </script>
+
+<!-- BootstraH5JS -->
+ <script src="javascript/graph.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

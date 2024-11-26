@@ -1,0 +1,16 @@
+.bg-light-blue{
+    background-color: rgb(248, 255, 255);
+}
+.bg-light-gray{
+    background-color: rgb(247, 247, 247);
+}
+.bg-light-dark-blue{
+    background-color:#001736;
+}
+.bg-light-dark-voilet{
+    background-color:#002b63;
+    
+}
+.text-b{
+    color: rgb(156, 156, 248);
+}
